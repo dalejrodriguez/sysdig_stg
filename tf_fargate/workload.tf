@@ -1,7 +1,7 @@
 
 
 provider "sysdig" {
-  sysdig_secure_api_token = var.sysdig_secure_api_token #"65ad0f94-4d2b-4323-94ed-e5d207140998"
+  sysdig_secure_api_token = var.sysdig_secure_api_token #"xxxx"
 }
 data "sysdig_fargate_workload_agent" "instrumented" {
   container_definitions = jsonencode([
@@ -24,7 +24,7 @@ data "sysdig_fargate_workload_agent" "instrumented" {
 
 )
 
-  sysdig_access_key     = var.sysdig_access_key #"4667a741-a377-4116-9319-6c50d57dfe99"
+  sysdig_access_key     = var.sysdig_access_key #"xxx"
 
   workload_agent_image  = "quay.io/sysdig/workload-agent:latest"
 
