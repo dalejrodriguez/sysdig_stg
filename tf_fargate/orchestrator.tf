@@ -34,9 +34,9 @@ terraform {
     source  = "sysdiglabs/fargate-orchestrator-agent/aws"
     version = "0.1.1"
 
-    vpc_id           = var.vpc_id # "vpc-03c2e677d6a40df9e"
-    subnets          = var.subnets # ["subnet-02cae0eb733eb7b47", "subnet-038584579182ff2a8"]
-    access_key       = var.sysdig_access_key #"4667a741-a377-4116-9319-6c50d57dfe99"
+    vpc_id           = var.vpc_id # "xxx"
+    subnets          = var.subnets # [xxx]
+    access_key       = var.sysdig_access_key #"xxx"
 
     name             = "sysdig-orchestrator"
     agent_image      = "quay.io/sysdig/orchestrator-agent:latest"
