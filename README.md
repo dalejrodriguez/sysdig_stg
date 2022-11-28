@@ -33,7 +33,7 @@ command: ["pwsh", "-c", "(./RunTests.ps1 BASE64.SHELLSCRIPT <NAME.OF.OTHER.TEST>
 
 ### Fargate
 A minimal set of terraform files that are compatible with STG and Fargate can be found at [minimal-fargate-stg](https://github.com/sysdig/minimal_fargate_stg). The only variables you *should* need to change are in [`variables.tf`](https://github.com/sysdig/minimal_fargate_stg/blob/master/variables.tf). Note that for the VPC Subnets, one must be public and the other private. Edit [`workload.tf`](https://github.com/sysdig/minimal_fargate_stg/blob/master/workload.tf#L12) with your desired tests, similarly to how we did in the K8s yaml file.
-Please raise any issues/concerns in #sds-f-fargate in Slack.
+Please raise any issues/concerns with your Sysdig Technical Contact.
 
 # Example Tests, with Descriptions, and associated Rules
 A brief description of some tests and the related alert/purpose:
