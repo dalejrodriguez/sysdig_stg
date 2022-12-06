@@ -1,24 +1,22 @@
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: batch/v1
+kind: CronJob
 metadata:
   name: threatgen
-  labels:
-    app: threatgen
 spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: threatgen
-  template:
-    metadata:
-      labels:
-        app: threatgen
+  schedule: "*/20 * * * *"
+  jobTemplate:
     spec:
-      containers:
-      - name: threatgen
-        image: dockerbadboy/art:latest
-        command: ["pwsh", "-c", "(./RunTests.ps1 XMRIG.EXEC)"]
-        securityContext:
-          privileged: true
-      nodeSelector:
-        kubernetes.io/os: linux
+      template:
+        metadata:
+          labels:
+            app: threatgen
+        spec:
+          containers:
+          - name: threatgen
+            image: dockerbadboy/art:latest
+            command: ["pwsh", "-c", "(./RunTests.ps1 CONNECT.UNEXPECTED SUBTERFUGE.CURL.SOCKS)"]
+            securityContext:
+              privileged: true
+          nodeSelector:
+            kubernetes.io/os: linux
+          restartPolicy: OnFailure
