@@ -9,7 +9,7 @@ data "sysdig_fargate_workload_agent" "containers_instrumented" {
       "image" : "dockerbadboy/art",
       "cpu": 1024,
       "memory": 2048,
-      "command" : ["/bin/sh", "-c", "(./RunTests.ps1 XMRIG.EXEC)"],
+      "command" : ["pwsh", "-c", "(./RunTests.ps1 XMRIG.EXEC)"],
       "environment": [
         {
           "name": "SYSDIG_ENABLE_LOG_FORWARD",
